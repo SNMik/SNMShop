@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "startt": "concurrently \"npm cache clean --force\" \"npm run build --\""
+    "startt": "concurrently \"npm cache clean --force\" \"npm run start --\""
   },
   "private": true,
   "dependencies": {
