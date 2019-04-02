@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    min-height: 100%;
+    font-family: 'Open Sans',sans-serif;
+    color: #4f5f6f;
+    overflow-x: hidden;
+}
+
+div {
+  display: block;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:not(.btn) {
+  transition: color .13s;
+  text-decoration: none;
+  color: #52bcd3;
+}
+
+input, textarea {
+  outline: 0;
+}
+
+.text-muted {
+  color: #6c757d!important;
+}
+
+.btn.btn-primary {
+  color: #fff;
+  background-color: #52bcd3;
+  border-color: #52bcd3;
+}
+
+.form-control.underlined {
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #d7dde4;
+}
+
+.control-label, label {
+  font-weight: 600;
+}
+
