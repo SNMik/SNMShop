@@ -66,3 +66,17 @@ input, textarea {
   font-weight: 600;
 }
 
+.form-group.has-error .form-help-text {
+  color: #fb494d;
+  font-size: 13px;
+}
+
+.form-group.has-error .form-control {
+  border-color: #fb494d;
+}
+
+.has-error .form-control.underlined {
+  box-shadow: none;
+  border-color: #f44;
+}
+
