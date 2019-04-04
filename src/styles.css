@@ -74,9 +74,27 @@ input, textarea {
 .form-group.has-error .form-control {
   border-color: #fb494d;
 }
+.form-group.has-success .form-help-text{
+  color:#8cde33;
+  font-size:13px
+}
 
 .has-error .form-control.underlined {
   box-shadow: none;
   border-color: #f44;
 }
 
+
+.btn.btn-primary{
+  color:#fff;
+  background-color:#52bcd3;
+  border-color:#52bcd3
+}
+
+.btn.btn-primary:hover{
+  color:#fff;
+  background-color:#31a7c1;
+  border-color:#2fa0b9
+}
+
+  
