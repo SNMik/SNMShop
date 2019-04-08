@@ -15,7 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)], // регистрация корневых модулей
+  imports: [RouterModule.forChild(routes)], // регистрация дочерних модулей
   exports: [RouterModule]
 })
 

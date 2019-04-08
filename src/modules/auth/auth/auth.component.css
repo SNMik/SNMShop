@@ -7,7 +7,7 @@
     overflow-x: hidden;
     overflow-y: auto;
 }
-
+ 
 .auth-container {
     width: 450px;
     min-height: 330px;
@@ -31,6 +31,7 @@
     border-bottom: 1px solid #52bcd3;
 }
 
+
 .auth-container .auth-title {
     color: #97a4b1;
     padding: 20px;
@@ -45,5 +46,31 @@
     min-height: 260px;
 }
 
-/*,
-              "src/assets/theme.css"*/
+.auth-container .checkbox label{
+    padding:0
+}
+
+.auth-container .checkbox a{
+    vertical-align:text-top
+}
+
+.auth-container .checkbox span{
+    color:#4f5f6f
+}
+
+@media (max-width:767px){
+	.auth-container{
+        width:100%;
+        position:relative;
+        left:0;
+        top:0;
+        -webkit-transform:inherit;
+        transform:inherit;
+        margin:0;
+        margin-bottom:10px
+    }
+    .auth-container .auth-content{
+        padding:30px 25px
+    }
+}
+   
