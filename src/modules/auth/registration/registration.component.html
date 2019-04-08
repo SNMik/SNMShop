@@ -1,27 +1,27 @@
 <p class="text-xs-center">Регистрация для получения доступа</p>
 
-<form>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="text" class="form-control underlined" id="email" placeholder="Введите email">
+    <input type="text" class="form-control underlined" id="email" placeholder="Введите email" formControlName="email">
   </div>
 
   <div class="form-group has-error">
     <label for="password">Пароль</label>
-    <input type="password" class="form-control underlined" id="password" placeholder="Введите пароль">
+    <input type="password" class="form-control underlined" id="password" placeholder="Введите пароль" formControlName="password">
     <span class="form-help-text">Error message.</span>
   </div>
 
   <div class="form-group has-success">
     <label for="name">Имя</label>
-    <input type="text" class="form-control underlined" id="name" placeholder="Введите имя">
+    <input type="text" class="form-control underlined" id="name" placeholder="Введите имя" formControlName="name">
     <span class="form-help-text">Success message.</span>
   </div>
 
   <div class="form-group">
     <label for="agree">
-      <input class="checkbox" id="agree" type="checkbox">
+      <input class="checkbox" id="agree" type="checkbox" formControlName="agree">
       <span>Согласен с правилами</span>
     </label>
   </div> 
