@@ -4,15 +4,15 @@ import { Observable } from 'rxjs';
 
 import { User } from '../models/user.model';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class UserService {
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    getUserByEmail(email: string): Observable<User[]> {
-        return this.http.get<User[]>(`http://localhost:3000/users?email=${email}`);
-    }
+  getUserByEmail(email: string): Observable<User[]> {
+    return this.http.get<User[]>(`http://localhost:3000/users?email=${email}`);
+  }
 
-    createNewUser(user: User): Observable<User>{
-      return this.http.post<User>(`http://localhost:3000/users`, user);
-    }
+  createNewUser(user: User): Observable<User> {
+    return this.http.post<User>(`http://localhost:3000/users`, user);
+  }
 }
