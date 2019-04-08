@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { UserService } from 'src/modules/shared/services/users.service';
 import { AuthService } from '../services/auth.service';
@@ -18,16 +18,25 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   message: Message;
 
-  constructor(private userService: UserService, 
+  constructor(private userService: UserService,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+
     this.message = new Message('danger', '');
 
+    this.route.queryParams
+      .subscribe((params: Params) => {
+        if (params['canLoggin']) {
+          this.showMessage('Теперь вы можете войти в систему', 'success');
+        }
+      });
+
     this.form = new FormGroup({
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'password': new FormControl(null, [Validators.required, Validators.minLength(6)])
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     });
   }
 
@@ -43,17 +52,15 @@ export class LoginComponent implements OnInit {
 
     this.userService.getUserByEmail(email)
       .subscribe((users: User[]) => {
-        let user = users[0] ? users[0] : undefined;
-        if (user) {          
+        const user = users[0] ? users[0] : undefined;
+        if (user) {
           if (user.password === this.form.value.password) {
             window.localStorage.setItem('user', JSON.stringify(user));
             this.authService.login();
-          }
-          else {
+          } else {
             this.showMessage('Неверный пароль.');
           }
-        }
-        else {
+        } else {
           this.showMessage('Не найден пользователь с таким email.');
         }
       });

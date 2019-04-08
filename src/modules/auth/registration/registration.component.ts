@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { UserService } from 'src/modules/shared/services/users.service';
+
 import { User } from 'src/modules/shared/models/user.model';
+import { Message } from 'src/modules/shared/models/message.model';
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +16,9 @@ export class RegistrationComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
 
@@ -31,6 +36,12 @@ export class RegistrationComponent implements OnInit {
     const user = new User(email, password, name);
 
     this.userService.createNewUser(user)
-      .subscribe((user: User) => console.log(user));
+      .subscribe(() => {
+        this.router.navigate(['/login'], {
+          queryParams: {
+            canLoggin: true
+          }
+        });
+      });
   }
 }
