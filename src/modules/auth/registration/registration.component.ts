@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { UserService } from 'src/modules/shared/services/users.service';
+import { User } from 'src/modules/shared/models/user.model';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -10,7 +13,7 @@ export class RegistrationComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
 
@@ -23,7 +26,11 @@ export class RegistrationComponent implements OnInit {
 
   }
 
-  onSubmit(){
-    console.log(this.form);
+  onSubmit() {
+    const { email, password, name } = this.form.value;
+    const user = new User(email, password, name);
+
+    this.userService.createNewUser(user)
+      .subscribe((user: User) => console.log(user));
   }
 }
