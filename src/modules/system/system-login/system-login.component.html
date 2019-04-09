@@ -1,7 +1,7 @@
 <div class="system-login">
-  <div *ngIf="authentificate">Вы залогинены как {{user.name}}</div>
+  <div *ngIf="authentificate">Добро пожаловать, <b>{{user.name}}</b></div>
   <ng-template>
-    <p class="text-muted text-xs-center">
+    <p>
       <a [routerLink]="'/login'">Войти</a>
     </p>
   </ng-template>

@@ -1,3 +1,20 @@
-<p>
-  menu works!
-</p>
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" [routerLink]="'/company'"> Rodos </a>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li class="active"><a [routerLink]="'/company'">О компании</a></li>
+      <li><a [routerLink]="'/products'">Продукция</a></li>
+      <li><a [routerLink]="'/contact'">Контакты</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a [routerLink]="'/registration'"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a [routerLink]="'/login'"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+
+  </div>
+</nav>

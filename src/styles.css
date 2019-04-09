@@ -37,12 +37,6 @@ a {
     cursor: pointer;
 }
 
-a:not(.btn) {
-  transition: color .13s;
-  text-decoration: none;
-  color: #52bcd3;
-}
-
 input, textarea {
   outline: 0;
 }

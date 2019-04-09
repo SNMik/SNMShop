@@ -1,3 +1,32 @@
-<p>
-  products-page works!
-</p>
+<div class="container">
+  <h2>Продукция</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Центральная частота (МГц)</th>
+        <th>Тип</th>
+        <th>Полоса пропускания(МГц)</th>
+        <th>Уровень полосы пропускания(дБ)</th>
+        <th>Неравномерность ГВЗ (нсек)</th>
+        <th>Потери (дБ)</th>
+        <th>Корпус</th>
+        <th>Приемка</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let pavFilter of pavFilters">
+        <td>{{idx}}</td>
+        <td>{{pavFilter.centerFrequency}}</td>
+        <td>{{pavFilter.type}}</td>
+        <td>{{pavFilter.bandwidthMgz}}</td>
+        <td>{{pavFilter.stripLevelBandwidthDb}}</td>
+        <td>{{pavFilter.unevenness}}</td>
+        <td>{{pavFilter.losses}}</td>
+        <td>{{pavFilter.housing}}</td>
+        <td>{{pavFilter.acceptance}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
