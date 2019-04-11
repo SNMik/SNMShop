@@ -29,6 +29,12 @@
       "password": "qwreqweqw",
       "name": "qweqwe",
       "id": 5
+    },
+    {
+      "email": "sychounm1@gmail.com",
+      "password": "123456",
+      "name": "Mikita Sychou",
+      "id": 6
     }
   ],
   "bill": {

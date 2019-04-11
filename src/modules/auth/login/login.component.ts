@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
           if (user.password === this.form.value.password) {
             window.localStorage.setItem('user', JSON.stringify(user));
             this.authService.login();
+            this.router.navigate(['/products']);
           } else {
             this.showMessage('Неверный пароль.');
           }
@@ -64,5 +65,7 @@ export class LoginComponent implements OnInit {
           this.showMessage('Не найден пользователь с таким email.');
         }
       });
+
+
   }
 }

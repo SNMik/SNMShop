@@ -14,7 +14,6 @@ export class ProductsPageComponent implements OnInit {
 
   ngOnInit() {
     this.initArrayForTest();
-    console.log(this.pavFilters);
   }
 
   private initArrayForTest(){

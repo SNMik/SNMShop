@@ -1,6 +1,5 @@
-.system-login{
-  text-align: right;
-  margin-right: 2%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+#system_login_welcom{
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }

@@ -1,8 +1,15 @@
 <div class="system-login">
-  <div *ngIf="authentificate">Добро пожаловать, <b>{{user.name}}</b></div>
-  <ng-template>
-    <p>
-      <a [routerLink]="'/login'">Войти</a>
-    </p>
+  <ul class="nav navbar-nav navbar-right" *ngIf="isAuthentificated; else notIsAuthentificated">
+    <li id="system_login_welcom"> Добро пожаловать, <b>{{user.name}}</b> </li>
+    <li>
+      <a [routerLink]="'/products'" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Выйти </a>
+    </li>
+  </ul>
+
+  <ng-template #notIsAuthentificated>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a [routerLink]="'/registration'"><span class="glyphicon glyphicon-user"></span> Зарегистрироваться </a></li>
+      <li><a [routerLink]="'/login'"><span class="glyphicon glyphicon-log-in"></span> Войти </a></li>
+    </ul>
   </ng-template>
 </div>

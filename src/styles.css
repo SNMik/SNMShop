@@ -96,4 +96,12 @@ input, textarea {
   border-color:#2fa0b9
 }
 
+.main-content{
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: 100%;
+}
+
+
 

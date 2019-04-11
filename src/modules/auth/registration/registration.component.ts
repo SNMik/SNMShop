@@ -31,7 +31,6 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
 
     const { email, password, name } = this.form.value;
     const user = new User(email, password, name);

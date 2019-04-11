@@ -11,13 +11,18 @@ import { User } from 'src/modules/shared/models/user.model';
 export class SystemLoginComponent implements OnInit {
 
   user: User;
-  authentificate: boolean;
+  isAuthentificated: boolean;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.user = JSON.parse(window.localStorage.getItem('user'));
-    this.user ? this.authentificate = true : this.authentificate = false;
+    this.user ? this.isAuthentificated = true : this.isAuthentificated = false;
+
   }
 
+  logout(){
+    this.isAuthentificated = false;
+    window.localStorage.removeItem('user');
+  }
 }
