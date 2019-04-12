@@ -4,100 +4,67 @@
       "id": 1,
       "email": "wfm@mail.ru",
       "password": "12345678",
+      "role": "",
       "name": "Администратор"
     },
     {
       "email": "sychounm@gmail.com",
-      "password": "ghggggg",
-      "name": "gggg",
-      "id": 2
-    },
-    {
-      "email": "sychounm@gmail.com",
-      "password": "wrwerewr",
-      "name": "ewrewrwe",
-      "id": 3
-    },
-    {
-      "email": "sychounm@gmail.com",
-      "password": "asdfasdas",
-      "name": "asdas",
-      "id": 4
-    },
-    {
-      "email": "sychounm@gmail.com",
-      "password": "qwreqweqw",
-      "name": "qweqwe",
-      "id": 5
-    },
-    {
-      "email": "sychounm1@gmail.com",
       "password": "123456",
       "name": "Mikita Sychou",
-      "id": 6
-    }
-  ],
-  "bill": {
-    "value": 100000,
-    "currency": "RUB"
-  },
-  "categories": [
-    {
-      "name": "Дом",
-      "capacity": 15000,
-      "id": 1
-    },
-    {
-      "name": "Еда",
-      "capacity": 10000,
+      "role": "admin",
       "id": 2
-    },
-    {
-      "id": 3,
-      "name": "Машина",
-      "capacity": 7000
     }
   ],
-  "events": [
+  "pavFilters": [
     {
-      "id": 1,
-      "type": "income",
-      "amount": 1250,
-      "category": 2,
-      "date": "12.06.2017 19:49:02",
-      "description": "Подарили еду в гостях"
+      "centerFrequency": "18.18",
+      "type": "A132-18.18M1",
+      "bandwidthMgz": "1.3",
+      "stripLevelBandwidthDb": "-3",
+      "unevenness": "NS",
+      "losses": "6.5",
+      "housing": "DIP14",
+      "acceptance": "5"
     },
     {
-      "id": 2,
-      "type": "outcome",
-      "amount": 1300,
-      "category": 1,
-      "date": "13.06.2017 19:49:02",
-      "description": "Купил посудомоечную машину"
+      "centerFrequency": "28.18",
+      "type": "A132-18.18M1",
+      "bandwidthMgz": "1.3",
+      "stripLevelBandwidthDb": "-3",
+      "unevenness": "NS",
+      "losses": "6.5",
+      "housing": "DIP14",
+      "acceptance": "5"
     },
     {
-      "type": "income",
-      "amount": 1480,
-      "category": 2,
-      "date": "17.06.2017 14:00:48",
-      "id": 3,
-      "description": "Поход в окей с баллами. Бесплатная еда"
+      "centerFrequency": "38.18",
+      "type": "A132-18.18M1",
+      "bandwidthMgz": "1.3",
+      "stripLevelBandwidthDb": "-3",
+      "unevenness": "NS",
+      "losses": "6.5",
+      "housing": "DIP14",
+      "acceptance": "5"
     },
     {
-      "type": "outcome",
-      "amount": 2470,
-      "category": 2,
-      "date": "17.06.2017 14:00:58",
-      "id": 4,
-      "description": "Закупка на неделю"
+      "centerFrequency": "48.18",
+      "type": "A132-18.18M1",
+      "bandwidthMgz": "1.3",
+      "stripLevelBandwidthDb": "-3",
+      "unevenness": "NS",
+      "losses": "6.5",
+      "housing": "DIP14",
+      "acceptance": "5"
     },
     {
-      "type": "outcome",
-      "amount": 4000,
-      "category": 3,
-      "date": "10.06.2017 14:01:58",
-      "id": 5,
-      "description": "Заправка + проход ТО"
+      "centerFrequency": "58.18",
+      "type": "A132-18.18M1",
+      "bandwidthMgz": "1.3",
+      "stripLevelBandwidthDb": "-3",
+      "unevenness": "NS",
+      "losses": "6.5",
+      "housing": "DIP14",
+      "acceptance": "5"
     }
   ]
 }

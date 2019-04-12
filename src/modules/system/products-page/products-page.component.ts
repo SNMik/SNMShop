@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { PavFilterService } from 'src/modules/shared/services/pav-filter.service';
+
 import { PavFilter } from 'src/modules/shared/models/pav-filter.model';
 
 @Component({
@@ -6,17 +9,26 @@ import { PavFilter } from 'src/modules/shared/models/pav-filter.model';
   templateUrl: './products-page.component.html',
   styleUrls: ['./products-page.component.css']
 })
+
 export class ProductsPageComponent implements OnInit {
 
   pavFilters: PavFilter[];
 
-  constructor() { }
+  constructor(private pavFilterService: PavFilterService) { }
 
   ngOnInit() {
-    this.initArrayForTest();
+
+    this.getAllPavFilters();
+
+    console.log(this.pavFilters);
   }
 
-  private initArrayForTest(){
+  getAllPavFilters() {
+    this.pavFilterService.getAllPavFilter()
+      .subscribe((pavFilters: PavFilter[]) => this.pavFilters = pavFilters);
+  }
+
+  private initArrayForTest() {
     const pavFilterTest1 = {
       centerFrequency: '18.18',
       type: 'A132-18.18M1',
