@@ -103,5 +103,9 @@ input, textarea {
   height: 100%;
 }
 
+.hiden-text{
+  color: transparent;
+}
+
 
 

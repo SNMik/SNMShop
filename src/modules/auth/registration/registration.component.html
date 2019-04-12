@@ -2,25 +2,33 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
+  <!-- email -->
   <div class="form-group" [ngClass]="{'has-error':form.get('email').invalid && form.get('email').touched}">
     <label for="email">Email</label>
 
     <input type="text" class="form-control underlined" id="email" placeholder="Введите email" formControlName="email">
 
-    <span class="form-help-text" *ngIf="form.get('email').touched && form.get('email').invalid">
+    <span class="form-help-text"
+      *ngIf="form.get('email').touched && form.get('email').invalid; else placeForEmailError">
       <span *ngIf="form.get('email')['errors']['required']">Введите email</span>
       <span *ngIf="form.get('email')['errors']['email']">Введите корректный email</span>
       <span *ngIf="form.get('email')['errors']['forbiddenEmail']">Email уже занят</span>
     </span>
+
+    <ng-template #placeForEmailError>
+      <span class="hiden-text"> - </span>
+    </ng-template>
   </div>
 
+  <!-- password -->
   <div class="form-group" [ngClass]="{'has-error':form.get('password').invalid && form.get('password').touched}">
     <label for="password">Пароль</label>
 
     <input type="password" class="form-control underlined" id="password" placeholder="Введите пароль"
       formControlName="password">
 
-    <span class="form-help-text" *ngIf="form.get('password').invalid && form.get('password').touched">
+    <span class="form-help-text"
+      *ngIf="form.get('password').invalid && form.get('password').touched; else placeForPasswordError">
       <span *ngIf="form.get('password')['errors']['required']">Введите пароль</span>
 
       <span
@@ -29,29 +37,45 @@
         символов
       </span>
     </span>
+
+    <ng-template #placeForPasswordError>
+      <span class="hiden-text"> - </span>
+    </ng-template>
   </div>
 
+  <!-- name -->
   <div class="form-group" [ngClass]="{'has-error':form.get('name').invalid && form.get('name').touched}">
     <label for="name">Имя</label>
 
     <input type="text" class="form-control underlined" id="name" placeholder="Введите имя" formControlName="name">
 
-    <span class="form-help-text" *ngIf="form.get('name').touched && form.get('name').invalid">
+    <span class="form-help-text" *ngIf="form.get('name').touched && form.get('name').invalid; else placeForNameError">
       <span *ngIf="form.get('name')['errors']['required']">Введите имя</span>
     </span>
+
+    <ng-template #placeForNameError>
+      <span class="hiden-text"> - </span>
+    </ng-template>
   </div>
 
+  <!-- agree -->
   <div class="form-group" [ngClass]="{'has-error':form.get('agree').invalid && form.get('agree').touched}">
     <label for="agree">
-      <input class="checkbox" id="agree" type="checkbox" formControlName="agree">
+      <input class="checkbox" id="agree" type="checkbox" formControlName="agree" id="registration_agree">
       <span>Согласен с правилами</span>
     </label>
 
-    <p>
-      <span class="form-help-text" *ngIf="form.get('agree').touched && form.get('agree').invalid">
-        <span *ngIf="form.get('agree')['errors']['required']">Необходимо согласиться с правилами</span>
+    <div>
+      <span class="form-help-text"
+        *ngIf="form.get('agree').touched && form.get('agree').invalid; else placeForEmailError">
+        <span *ngIf="form.get('agree')['errors']['required']; else placeForAgreeError">Необходимо согласиться с
+          правилами</span>
+
+        <ng-template #placeForAgreeError>
+          <span class="hiden-text"> - </span>
+        </ng-template>
       </span>
-    </p>
+    </div>
   </div>
 
   <div class="form-group">
