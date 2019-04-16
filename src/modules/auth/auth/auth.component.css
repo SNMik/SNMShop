@@ -29,8 +29,7 @@ a:not(.btn) {
 .card {
     background-color: #fff;
     box-shadow: 1px 1px 5px rgba(126, 142, 159, .1);
-    margin-bottom: 10px;
-    border-radius: 0;
+    border-radius: 20px;
     border: none;
 }
 
