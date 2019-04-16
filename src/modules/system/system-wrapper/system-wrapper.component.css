@@ -9,7 +9,7 @@
 .app {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   margin: 0 auto;
   left: 0;
   background-color: #f0f3f6;
@@ -20,9 +20,6 @@
 }
 
 .app .app-container {
-  margin-right: 5%;
-  margin-left: 5%;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  min-height: 100vh;
+  margin: 1% 5%;
+  height: 100%;
 }
